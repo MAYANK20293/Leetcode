@@ -1,23 +1,22 @@
 class Solution {
 public:
     int minOperations(vector<string>& logs) {
-        vector<string> ans;
+        int ans=0;
         for(auto i:logs)
         {
             if(i=="../")
             {
-                if(ans.size()==0)
+                if(ans==0)
                 continue;
                 else
-                ans.pop_back();
+                ans--;
             }
             else if(i=="./")
             continue;
-            else 
-            {
-                ans.push_back(i);
+            else{
+                ans++;
             }
-        } 
-        return ans.size();
+        }
+        return ans;
     }
 };
